@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frank Ocean</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script
+      src="https://kit.fontawesome.com/196e489959.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <header class="headerapp">
+      <img src="./assets/Cat--Streamline-Block-Free (1).png" alt="icon gato" />
+      <p>alexa's playlist</p>
+    </header>
+
+    <div class="container">
+      <div class="album">
+        <img src="./assets/channel.jpeg" alt="" />
+        <div class="infoalmbum">
+          <h1>Bad Religion</h1>
+          <p>Channel Orange</p>
+          <p>Frank Ocean • 17 músicas • 55min 47s</p>
+        </div>
+      </div>
+      <div class="audio-controls">
+        <audio id="song">
+          <source src="./CHANNEL ORANGE/Bad Religion.mp3" type="audio/mpeg" />
+        </audio>
+
+        <input type="range" value="0" id="progress" />
+      </div>
+      <div class="controls">
+        <div><i class="fa-solid fa-backward"></i></div>
+        <div onclick="playPause()">
+          <i class="fa-solid fa-play" id="ctrlIcon"></i>
+        </div>
+        <div><i class="fa-solid fa-forward"></i></div>
+      </div>
+
+      <div class="info">
+        <img src="./assets/Ellipse 1.png" />
+
+        <h1>Frank Ocean</h1>
+
+        <p>
+          Visionary American recording artist Frank Ocean is one of the most
+          celebrated and critically acclaimed artists of this era.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      let progress = document.getElementById("progress");
+      let song = document.getElementById("song");
+      let ctrlIcon = document.getElementById("ctrlIcon");
+
+      song.onloadedmetadata = function () {
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+      };
+
+      function playPause() {
+        if (ctrlIcon.classList.contains("fa-pause")) {
+          song.pause();
+          ctrlIcon.classList.remove("fa-pause");
+          ctrlIcon.classList.add("fa-play");
+        } else {
+          song.play();
+          ctrlIcon.classList.add("fa-pause");
+          ctrlIcon.classList.remove("fa-play");
+        }
+      }
+
+      if (song.play()) {
+        setInterval(() => {
+          progress.value = song.currentTime;
+        }, 500);
+      }
+
+      progress.onchange = function () {
+        song.play();
+        song.currentTime = progress.value;
+        ctrlIcon.classList.add("fa-pause");
+        ctrlIcon.classList.remove("fa-play");
+      };
+    </script>
+  </body>
+</html>

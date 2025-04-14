@@ -1,0 +1,153 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /*background-image: linear-gradient(to bottom, #332e2c, #2c1306);*/
+  font-family: "Inter", sans-serif;
+  background-image: linear-gradient(to bottom, #332e2c, #2c1306);
+}
+
+/*header*/
+
+.headerapp {
+  display: flex;
+  background-color: #000000;
+  height: 72px;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.headerapp p {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 8px;
+  margin: 24px;
+}
+
+.headerapp img {
+  width: 50px;
+  height: 48px;
+  margin: 24px;
+}
+
+/* album info */
+
+.container {
+  width: 100%;
+  height: 100;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+.album {
+  display: flex;
+  gap: 65px;
+  align-items: center;
+}
+
+.album img {
+  width: 285px;
+  height: 285px;
+  margin: 56px 100px;
+  border-radius: 4px;
+}
+
+.album h1 {
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.album p {
+  color: #9d9b9b;
+}
+
+/*player*/
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#progress {
+  appearance: none;
+  width: 80%;
+  height: 6px;
+  background: #6f6e6e;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 40px 0px;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #6f6e6e;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls div {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+
+  border-radius: 50%;
+  background-color: #fff;
+  color: #6f6e6e;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.controls div:nth-child(2) {
+  transform: scale(1.5);
+  background-color: #f37521;
+  color: white;
+}
+
+.info {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 50px 30px;
+  margin: 50px;
+  border-radius: 20px;
+  color: #fff;
+  gap: 20px;
+}
+
+.info img {
+  display: block;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+}
+
+.info h1 {
+  display: block;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.info p {
+  display: block;
+  text-align: center;
+}
